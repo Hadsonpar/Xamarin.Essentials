@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AwesomeApp"
+             x:Class="AwesomeApp.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <!--WidthRequest="{OnPlatform iOS=300, Android=250}"-->
+        <Image Source="HadsonparLogo.jpg"
+               HorizontalOptions="Center"
+               Margin="10"/>
+        <Label Text="Visiten el Blog"
+               TextColor="Blue"
+               TextDecorations="Underline"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               FontSize="Title">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TapCommand}"           CommandParameter="http://blog.hadsonpar.com/" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Label Text="&#128526;"
+               HorizontalOptions="Center"
+               FontSize="Title"/>
+        <Label Text="Publicamos temas acerca de las siguientes tecnologías:"
+               HorizontalOptions="Center"/>
+        <Label Text="ORACLE | MICROSOFT | OPEN SOURCE | CLOUD"
+               HorizontalOptions="Center"/>
+        <Label Text="Pequeñas aplicaciones, pero de gran impacto &#128522;"
+               TextColor="Turquoise"
+               FontSize="Subtitle"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Label Text="&#127760; Enviar Correo electrónico &#10;API de Xamarin.Essentials"
+               Margin="0,0,0,10"
+               FontAttributes="Bold"
+               FontSize="Small"
+               TextColor="#36FF33"
+               HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="txtTo" Placeholder="tu-email@dominio.com" />
+        <Entry x:Name="txtSubject" Placeholder="Asunto" />
+        <Editor x:Name="txtBody" HeightRequest="50"/>
+        <Button x:Name="btnSend" Text="Enviar" Clicked="btnSend_Clicked"/>
+        
+        <Label Text="&#128588; Welcome to Xamarin.Forms!" 
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+        <Button Text="Click me" Clicked="Button_Clicked" />
+    </StackLayout>
+</ContentPage>
